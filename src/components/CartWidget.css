@@ -1,0 +1,36 @@
+.cart-container {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    
+}
+.cart-container-cart {
+    width: 25px;
+}
+.cart-container > label {
+    color: white;
+    margin-right: 5px;
+}
+.cart-container-cart:hover {
+    width: 30px;
+    margin-left: -5px;
+}
+.cart-container-circle {
+    border-radius: 50%;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+}
+.cart-container-circle:hover{
+    background-color: blue;
+}
+.cart-container-circle > p {
+    font-size: 15px;
+    font-family: 'Outfit', sans-serif;
+}

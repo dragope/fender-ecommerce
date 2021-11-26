@@ -1,7 +1,7 @@
 import React from 'react'
 import './NavBar.css'
 import logo from'./images/pngaaa.com-1300231.png'
-import cart from './images/shopping cart.svg'
+import CartWidget from './CartWidget'
 
 function NavBar(){
     return(
@@ -13,11 +13,7 @@ function NavBar(){
                     <a href="">Register</a>
                 </div>
                 <img src={logo} alt="Fender Logo" className="nav-logo" />
-                <div className="nav-login">
-                    <label>Shopping Cart</label>
-                    <img className="nav-login-cart" src={cart} alt="Shopping Cart Icon"/>
-                    <div className="nav-login-circle"><p>5</p></div>
-                </div>
+                <CartWidget/>
             </div>
             <ul>
                 <li><a href="">GUITAR</a></li>

@@ -1,0 +1,10 @@
+.itemlistcontainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.itemlistcontainer > h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}

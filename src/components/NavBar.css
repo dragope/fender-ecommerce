@@ -26,13 +26,6 @@
     width: 400px;
     
 }
-.nav-login-cart {
-    width: 25px;
-}
-.nav-login-cart:hover {
-    width: 30px;
-    margin-left: -5px;
-}
 .nav-login > a:hover {
     color: red;
 }
@@ -45,20 +38,6 @@
     color: white;
     font-size: 15px;
     margin: 10px;
-}
-.nav-login-circle {
-    border-radius: 50%;
-    background-color: red;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -10px;
-}
-.nav-login-circle > p {
-    font-size: 15px;
-    font-family: 'Outfit', sans-serif;
 }
 .nav-container > ul {
     background-color: rgb(224, 224, 224);
