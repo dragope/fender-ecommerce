@@ -7,7 +7,7 @@ function CartWidget(){
         <div className="cart-container">
             <label>Shopping Cart</label>
             <img className="cart-container-cart" src={cart} alt="Shopping Cart Icon"/>
-            <div className="cart-container-circle"><p>5</p></div>
+            <div className="cart-container-circle"><p>0</p></div>
         </div>
     )
 }
