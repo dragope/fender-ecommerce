@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavBar.css'
-import logo from'./images/pngaaa.com-1300231.png'
+import logo from '../images/pngaaa.com-1300231.png'
 import CartWidget from './CartWidget'
 
 function NavBar(){

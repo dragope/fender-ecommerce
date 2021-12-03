@@ -1,11 +1,9 @@
 .itemcount-container {
-    width: 250px;
+    width: 390px;
     display: block;
     background-color: rgb(243, 243, 243);
     border: 1px solid rgb(185, 184, 184);
     padding: 10px;
-    margin: auto;
-
 }
 .counter-container {
     width: 100%;
