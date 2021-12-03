@@ -19,7 +19,7 @@ function ItemList({ items }){
     return(
         <div class="itemlist">
             { load === true ? 
-                <h1>Cargando...</h1> 
+                <div className="loader"></div>
                 : 
                 productos.map((producto) => <Item
                     key={ producto.id }
@@ -35,4 +35,5 @@ function ItemList({ items }){
 
 export default ItemList
 
-// productos.map((producto) => <li key={ producto.id }>{ producto.title }</li>) 
+
+                
