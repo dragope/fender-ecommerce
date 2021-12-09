@@ -4,7 +4,7 @@ import ItemDetail from './ItemDetail'
 
 function ItemDetailContainer(){
     return(
-        <div>
+        <div className="item-detail-container">
             <ItemDetail/>
         </div>
     )

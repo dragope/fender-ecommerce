@@ -4,6 +4,7 @@
     background-color: rgb(243, 243, 243);
     border: 1px solid rgb(185, 184, 184);
     padding: 10px;
+    width: 100%;
 }
 .counter-container {
     width: 100%;
@@ -20,7 +21,10 @@
     margin-top: 5px;
     border: 1px solid rgb(185, 184, 184);
     font-family: 'Outfit', sans-serif;
-    background-color: white;
+    font-size: 20px;
+    /* background-color: white; */
+    background-color: red;
+    color: white;
     
 }
 .counter-container > button {
@@ -34,4 +38,5 @@
 .counter-button:hover {
     border: 1.5px solid red;
     color: red;
+    background-color: white;
 }

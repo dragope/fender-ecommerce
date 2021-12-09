@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavBar.css'
-import logo from '../images/pngaaa.com-1300231.png'
+import logo from './images/pngaaa.com-1300231.png'
 import CartWidget from './CartWidget'
 
 function NavBar(){
@@ -16,12 +16,10 @@ function NavBar(){
                 <CartWidget/>
             </div>
             <ul>
-                <li><a href="">GUITAR</a></li>
-                <li><a href="">BASS</a></li>
-                <li><a href="">AMPLIFICATION</a></li>
-                <li><a href="">STRINGS</a></li>
-                <li><a href="">PEDALS</a></li>
-                <li><a href="">ACCESSORIES</a></li>
+                <li><a href="">STRATOCASTER</a></li>
+                <li><a href="">TELECASTER</a></li>
+                <li><a href="">JAGUAR</a></li>
+                <li><a href="">JAZZMASTER</a></li>
             </ul>
         </nav>
     )

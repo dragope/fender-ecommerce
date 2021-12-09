@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount";
 function Item( props ){
 
     const handleAddQuantity =(param)=>{
-        alert("Agregaste " + param + " productos al carrito")
+        alert("You added " + param + " product/s to your shopping cart")
     }
 
     return(
@@ -16,9 +16,9 @@ function Item( props ){
             </div>
             <h1>${props.price}</h1>
             <div class="stock-container">
-                <h4>Stock disponible: {props.stock}</h4>
+                <h4>Available stock : {props.stock}</h4>
             </div>
-            <button>Detalles del producto</button>
+            <button>Product Details</button>
             <ItemCount className="itemCounter" stock={props.stock} initial={1} onAdd={handleAddQuantity}/>
            
         </div>
