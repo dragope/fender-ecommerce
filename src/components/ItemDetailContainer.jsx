@@ -15,7 +15,7 @@ function ItemDetailContainer(){
 
         if(guitar){
             getFetch
-                .then(resp => setInstrument(resp.filter(prod => prod.id === parseInt(guitar))))
+                .then(resp => setInstrument(resp.filter(prod => prod.id == parseInt(guitar))))
                 .catch(err => console.log(err))
                 .finally(()=> setLoad(false))
         } else {

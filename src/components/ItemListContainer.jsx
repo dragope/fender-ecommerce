@@ -9,7 +9,6 @@ function ItemListContainer(){
 
     const [productos, setProductos] = useState([]);
     const [load, setLoad] = useState(true)
-
     const { type } = useParams();
 
     useEffect(()=>{
