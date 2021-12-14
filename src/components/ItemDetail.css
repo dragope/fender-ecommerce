@@ -1,11 +1,12 @@
 .detalles_producto {
     margin: auto;
     width: 1300px;
-    height: 500px;
+    height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-style: 'Outfit', sans-serif;
+    margin-bottom: 50px;
 }
 .detalles_producto__fotos{
     width: 750px;
@@ -42,11 +43,12 @@
     margin-bottom: 10px;
 }
 .detalles_producto__cuotas {
-    margin-bottom: 30px;
+    margin-top: 10px;
 }
 .detalles_producto__cuotas > h4 {
     color:grey;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .detalles_producto__cuotas > p {
     margin-top: 10px;

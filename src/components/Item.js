@@ -9,13 +9,13 @@ function Item( props ){
     }
 
     return(
-        <div key={props.id}class="card-container">
+        <div key={props.id} className="card-container">
             <img src={props.pictureURL} alt="Foto de producto" />
-            <div class="title-container">
+            <div className="title-container">
                 <h3>{props.title}</h3>
             </div>
-            <h1>${props.price}</h1>
-            <div class="stock-container">
+            <h1>${props.price}.00</h1>
+            <div className="stock-container">
                 <h4>Available stock : {props.stock}</h4>
             </div>
             <button>Product Details</button>
