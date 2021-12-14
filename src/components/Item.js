@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import './Item.css'
 import ItemCount from "./ItemCount";
 
@@ -18,7 +19,7 @@ function Item( props ){
             <div className="stock-container">
                 <h4>Available stock : {props.stock}</h4>
             </div>
-            <button>Product Details</button>
+            <Link to={`/detail/${props.id}`}><button className="card-container-button">Product Details</button></Link>
             <ItemCount className="itemCounter" stock={props.stock} initial={1} onAdd={handleAddQuantity}/>
            
         </div>

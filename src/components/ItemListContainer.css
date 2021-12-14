@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15px;
 }
 .itemlistcontainer > h1 {
     font-family: 'Outfit', sans-serif;

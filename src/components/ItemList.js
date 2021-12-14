@@ -11,6 +11,7 @@ function ItemList(props){
             price={ props.price }
             pictureURL={ props.pictureURL }
             stock= { props.stock }
+            id={ props.id }
         />
     )
 }
