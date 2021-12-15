@@ -15,13 +15,13 @@ function ItemListContainer(){
         if (type) {
             getFetch
                 .then(resp => setProductos(resp.filter(prod => prod.category === type)))
-                // .then(()=>setLoad(true))
+                .then(()=>setLoad(true))
                 .catch(err => console.log(err))
                 .finally(setTimeout(()=>{setLoad(false)},2000))
         } else {
             getFetch
                 .then(resp => setProductos(resp))
-                // .then(()=>setLoad(true))
+                .then(()=>setLoad(true))
                 .catch(err => console.log(err))
                 .finally(setTimeout(()=>{setLoad(false)},2000))
         }
