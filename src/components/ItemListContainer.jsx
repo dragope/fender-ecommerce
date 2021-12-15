@@ -12,17 +12,18 @@ function ItemListContainer(){
     const { type } = useParams();
 
     useEffect(()=>{
-
         if (type) {
             getFetch
                 .then(resp => setProductos(resp.filter(prod => prod.category === type)))
+                // .then(()=>setLoad(true))
                 .catch(err => console.log(err))
-                .finally(()=> setLoad(false))
+                .finally(setTimeout(()=>{setLoad(false)},2000))
         } else {
             getFetch
                 .then(resp => setProductos(resp))
+                // .then(()=>setLoad(true))
                 .catch(err => console.log(err))
-                .finally(()=> setLoad(false))
+                .finally(setTimeout(()=>{setLoad(false)},2000))
         }
     }, [type])
 
