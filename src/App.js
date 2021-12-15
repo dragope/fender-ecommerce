@@ -21,7 +21,7 @@ function App() {
             element={<ItemListContainer />}/>
           <Route 
             exact 
-            path="/detail/:guitar" 
+            path="/item/:guitar" 
             element={<ItemDetailContainer/>}/> 
         </Routes>
       </div>
