@@ -5,10 +5,12 @@ import { useState, useEffect } from 'react'
 import visa from './images/tarjetas/visa.png'
 import amex from './images/tarjetas/amex.png'
 import master from './images/tarjetas/mastercard.png'
+import ItemCountFinish from './ItemCountFinish'
 
 function ItemDetail(props){
 
     const [load, setLoad] = useState(true)
+    const [cart, setCart] = useState(true);
 
     useEffect(()=>{
         const waitLoader = new Promise((resolve)=>{
@@ -20,6 +22,8 @@ function ItemDetail(props){
 
     const handleAddQuantity =(param)=>{
         alert("You added " + param + " product/s to your shopping cart")
+        setCart(false)
+        console.log(param)
     }
 
     return(
@@ -58,7 +62,12 @@ function ItemDetail(props){
                             <button>CALCULATE SHIPPING COST</button>
                             <p><a href="https://tools.usps.com/zip-code-lookup.htm">Check you Zip Code</a></p>
                         </div>
-                        <ItemCount stock={ props.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
+                        { cart ?
+                            <ItemCount stock={ props.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
+                            :
+                            <ItemCountFinish />
+                        }
+                        
                     </div>
                 </div>
             }

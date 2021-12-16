@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import { useState } from "react";
 import './Item.css'
 import ItemCount from "./ItemCount";
+import ItemCountFinish from "./ItemCountFinish";
 
 function Item( props ){
 
+    const [cart, setCart] = useState(true);
+
     const handleAddQuantity =(param)=>{
         alert("You added " + param + " product/s to your shopping cart")
+        setCart(false)
     }
 
     return(
@@ -20,7 +25,11 @@ function Item( props ){
                 <h4>Available stock : {props.stock}</h4>
             </div>
             <Link to={`/item/${props.id}`}><button className="card-container-button">Product Details</button></Link>
-            <ItemCount className="itemCounter" stock={props.stock} initial={1} onAdd={handleAddQuantity}/>
+            { cart ?
+                <ItemCount stock={ props.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
+                :
+                <ItemCountFinish />
+            }
            
         </div>
     )
