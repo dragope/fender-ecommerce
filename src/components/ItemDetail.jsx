@@ -6,11 +6,14 @@ import visa from './images/tarjetas/visa.png'
 import amex from './images/tarjetas/amex.png'
 import master from './images/tarjetas/mastercard.png'
 import ItemCountFinish from './ItemCountFinish'
+import { useCartContext } from '../context/CartContext'
 
 function ItemDetail({instrument}){
 
     const [load, setLoad] = useState(true)
     const [cart, setCart] = useState(true);
+
+    const {cartList, addToCart} = useCartContext()
 
     useEffect(()=>{
         const waitLoader = new Promise((resolve)=>{
@@ -23,7 +26,7 @@ function ItemDetail({instrument}){
     const handleAddQuantity =(param)=>{
         alert("You added " + param + " product/s to your shopping cart")
         setCart(false)
-        console.log(param)
+        addToCart( {...instrument, quantity:parseInt(param)} )
     }
 
     return(

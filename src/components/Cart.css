@@ -13,3 +13,43 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  .cartpage-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-product-container{
+    padding: 5px;
+    margin-top: 20px;
+    width: 1000px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: .25px solid rgb(224, 224, 224);
+  }
+  .cart-product-image{
+    height: 120px;
+  }
+  .cart-product-container > p{
+    font-family: 'Outfit', sans-serif;
+    color: black;
+  }
+  .cartpage-container > button {
+    margin-top: 20px;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(153, 153, 116);;
+    font-size: 15px;
+    color: white;
+    border: 1px solid rgb(185, 184, 184);
+    width: 390px;
+    height: 35px;
+}
+.cartpage-container > button:hover {
+    border: 1.5px solid red;
+    color: red;
+    background-color: white;
+}
