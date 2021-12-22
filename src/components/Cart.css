@@ -22,6 +22,10 @@
   .cartpage-container > h3 {
     margin-top: 50px;
   }
+  .cartpage-container > h2 {
+    margin-top: 20px;
+    font-family: 'Outfit', sans-serif;
+  }
   .start-shopping{
     margin-top: 20px;
     border: none;
