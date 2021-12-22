@@ -15,8 +15,7 @@ function ItemDetailContainer(){
 
         if(guitar){
             getFetch
-                // .then(resp => setInstrument(resp.filter(prod => prod.id == parseInt(guitar))))
-                .then(resp => setInstrument(resp[guitar-1]))
+                .then(resp => setInstrument(resp.find(prod => prod.id == parseInt(guitar))))
                 .catch(err => console.log(err))
                 .finally(()=> setLoad(false))
         } else {
@@ -32,18 +31,7 @@ function ItemDetailContainer(){
             { load ? 
                 <div className="loader"></div>
                 : 
-                <ItemDetail
-                    key={ instrument.id }
-                    title={ instrument.title }
-                    price={ instrument.price }
-                    pictureURL={ instrument.pictureURL }
-                    stock= { instrument.stock }
-                    pic1={ instrument.pictureDetail1 } 
-                    pic2={ instrument.pictureDetail2 }
-                    pic3={ instrument.pictureDetail3 }
-                    category={ instrument.category }
-                    description={ instrument.description }
-                />
+                <ItemDetail instrument={instrument} />
             } 
         </div>
     )
