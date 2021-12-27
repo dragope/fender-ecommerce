@@ -32,13 +32,7 @@ function ItemListContainer(){
         { load ? 
             <div className="loader"></div>
             : 
-            productos.map((producto) => <ItemList
-                key={ producto.id }
-                title={ producto.title }
-                price={ producto.price }
-                pictureURL={ producto.pictureURL }
-                stock= { producto.stock }
-                id={ producto.id }
+            productos.map((producto) => <ItemList instrument={producto}
             />) 
         }
         </div>   

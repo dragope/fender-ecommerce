@@ -13,9 +13,9 @@ function CartContextProvider({children}) {
         if(itemIndex > -1){
             const prevQuant = parseInt(cartList[itemIndex].quantity)
             cartList.splice(itemIndex, 1)
-            setCartList([...cartList, {...item, quantity: item.quantity + prevQuant}])
+            setCartList([...cartList, {...item, quantity: item.quantity + prevQuant, accprice: item.price*(item.quantity+prevQuant)}])
         } else {
-            setCartList([...cartList, item])
+            setCartList([...cartList, {...item, accprice: item.price*item.quantity}])
         }
     }
      
@@ -23,12 +23,18 @@ function CartContextProvider({children}) {
         setCartList([])
     }
     
+    function deleteItem(item){
+        const itemIndex = cartList.findIndex(i => i.id === item.id)
+        cartList.splice(itemIndex, 1)
+        setCartList([...cartList])
+    }
 
     return (
         <CartContext.Provider value={{
             cartList,
             addToCart,
-            emptyCart
+            emptyCart,
+            deleteItem
         }}>
             { children }
         </CartContext.Provider>

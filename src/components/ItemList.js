@@ -3,15 +3,9 @@ import './ItemList.css'
 import Item from "./Item";
 
 
-function ItemList(props){
+function ItemList({instrument}){
     return(
-        <Item
-            key={ props.id }
-            title={ props.title }
-            price={ props.price }
-            pictureURL={ props.pictureURL }
-            stock= { props.stock }
-            id={ props.id }
+        <Item instrument={instrument}
         />
     )
 }
