@@ -1,7 +1,7 @@
 import React from 'react'
 import './ItemDetail.css'
 import ItemCount from './ItemCount'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import visa from './images/tarjetas/visa.png'
 import amex from './images/tarjetas/amex.png'
 import master from './images/tarjetas/mastercard.png'
@@ -9,7 +9,7 @@ import ItemCountFinish from './ItemCountFinish'
 import { useCartContext } from '../context/CartContext'
 
 function ItemDetail({instrument}){
-    
+
     const [cart, setCart] = useState(true);
 
     const { addToCart } = useCartContext()

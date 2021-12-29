@@ -2,7 +2,6 @@ import React from 'react'
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import { getFetch } from '../helpers/getFetch'
 import ItemList from './ItemList'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
@@ -11,22 +10,6 @@ function ItemListContainer(){
     const [productos, setProductos] = useState([]);
     const [load, setLoad] = useState(true)
     const { type } = useParams();
-
-    // useEffect(()=>{
-    //     if (type) {
-    //         getFetch
-    //             .then(resp => setProductos(resp.filter(prod => prod.category === type)))
-    //             .then(()=>setLoad(true))
-    //             .catch(err => console.log(err))
-    //             .finally(setTimeout(()=>{setLoad(false)},2000))
-    //     } else {
-    //         getFetch
-    //             .then(resp => setProductos(resp))
-    //             .then(()=>setLoad(true))
-    //             .catch(err => console.log(err))
-    //             .finally(setTimeout(()=>{setLoad(false)},2000))
-    //     }
-    // }, [type])
 
     useEffect(()=>{
         const db = getFirestore()
@@ -45,14 +28,12 @@ function ItemListContainer(){
         }
     }, [type])
 
-    console.log(productos)
-
     return(
         <div className='itemlistcontainer'>
         { load ? 
             <div className="loader"></div>
             : 
-            productos.map((producto) => <ItemList instrument={producto}
+            productos.map((producto) => <ItemList key={producto.id} instrument={producto}
             />) 
         }
         </div>   
