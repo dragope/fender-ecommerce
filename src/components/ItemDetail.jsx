@@ -9,19 +9,10 @@ import ItemCountFinish from './ItemCountFinish'
 import { useCartContext } from '../context/CartContext'
 
 function ItemDetail({instrument}){
-
-    const [load, setLoad] = useState(true)
+    
     const [cart, setCart] = useState(true);
 
-    const {cartList, addToCart} = useCartContext()
-
-    useEffect(()=>{
-        const waitLoader = new Promise((resolve)=>{
-            setTimeout(()=>{
-                resolve(setLoad(!load))
-            }, 2000)
-        })
-    }, [])
+    const { addToCart } = useCartContext()
 
     const handleAddQuantity =(param)=>{
         alert("You added " + param + " product/s to your shopping cart")
@@ -30,10 +21,6 @@ function ItemDetail({instrument}){
     }
 
     return(
-        <div>
-            { load ? 
-                <div className="loader"></div>
-                : 
                 <div className="detalles_producto">
                     <div className="detalles_producto__fotos">
                         <img alt="Guitarra" src={ instrument.pictureDetail1 } className="foto_miniatura"/>
@@ -72,10 +59,7 @@ function ItemDetail({instrument}){
                         }
                         
                     </div>
-                </div>
-            }
-        </div>
-        
+                </div>    
     )
 }
 

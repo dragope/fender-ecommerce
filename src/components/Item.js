@@ -9,7 +9,7 @@ import { useCartContext } from '../context/CartContext'
 function Item( {instrument} ){
 
     const [cart, setCart] = useState(true);
-    const {cartList, addToCart} = useCartContext()
+    const { addToCart } = useCartContext()
 
     const handleAddQuantity =(param)=>{
         alert("You added " + param + " product/s to your shopping cart")

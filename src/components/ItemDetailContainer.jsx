@@ -2,8 +2,8 @@ import React from 'react'
 import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getFetch } from '../helpers/getFetch'
 import ItemDetail from './ItemDetail'
+import { doc, getDoc, getFirestore, query, where } from 'firebase/firestore'
 
 function ItemDetailContainer(){
 
@@ -12,18 +12,13 @@ function ItemDetailContainer(){
     const { guitar } = useParams()
 
     useEffect(()=>{
-
-        if(guitar){
-            getFetch
-                .then(resp => setInstrument(resp.find(prod => prod.id == parseInt(guitar))))
-                .catch(err => console.log(err))
-                .finally(()=> setLoad(false))
-        } else {
-            getFetch
-                .then(resp => setInstrument(resp))
-                .catch(err => console.log(err))
-                .finally(()=> setLoad(false))
-        }
+        const db = getFirestore()
+        const guitarRef = doc(db, 'items', guitar) 
+        getDoc(guitarRef)
+            .then(resp => setInstrument({ id: resp.id, ...resp.data() }))
+            .catch(e => console.log(e))
+            .finally(()=> setLoad(false))
+ 
     }, [guitar])
 
     return(
