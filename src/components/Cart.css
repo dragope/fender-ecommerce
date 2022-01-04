@@ -84,6 +84,15 @@
     color: grey;
     font-size: 25px;
   }
+  .cart-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 1000px;
+    margin-bottom: 20px;
+
+  }
   .cart-deleteItem {
     height: 25px;
   }
@@ -98,7 +107,7 @@
     font-size: 15px;
     color: white;
     border: 1px solid rgb(185, 184, 184);
-    width: 390px;
+    width: 300px;
     height: 35px;
 }
 .empty-cart-button:hover {
@@ -113,11 +122,75 @@
   color: red;
   background-color: white;
   font-size: 15px;
-  width: 390px;
+  width: 300px;
   height: 35px;
 }
 .continue-shopping-button:hover{
   border: 2.5px solid red;
   color: white;
   background-color: red;
+}
+.user-data-provier-container{
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+}
+.user-data-form-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.user-data-form-container > div {
+  width: 450px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-data-form-container > div > label{
+  align-self: flex-start;
+}
+.user-data-form-container > div > input {
+  margin-left: 5px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  /* font-style: italic; */
+  text-align: center;
+  height: 30px;
+  width: 400px;
+  display: block;
+}
+.user-data-submit-button {
+  margin-top: 20px;
+  font-family: 'Outfit', sans-serif;
+  border: 1.5px solid red;
+  color: red;
+  background-color: white;
+  font-size: 15px;
+  width: 300px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+.user-data-submit-button:hover{
+  border: 2.5px solid red;
+  color: white;
+  background-color: red;
+}
+.order-summary{
+  font-family: 'Outfit', sans-serif;
+}
+.order-summary > h1, h2, .cart-total-price {
+  margin-bottom: 20px;
+}
+.order-summary-userdata > h4 {
+  color: grey
+}
+.order-summary-userdata{
+  width: 400px;
+  /* background-color:rgb(153, 153, 116); */
+  padding: 5px;
+  border: 0.5px solid grey
 }
