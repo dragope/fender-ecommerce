@@ -13,12 +13,11 @@ function ItemDetailContainer(){
 
     useEffect(()=>{
         const db = getFirestore()
-        const guitarRef = doc(db, 'items', guitar) 
+        const guitarRef = doc(db, 'items', guitar)
         getDoc(guitarRef)
             .then(resp => setInstrument({ id: resp.id, ...resp.data() }))
             .catch(e => console.log(e))
             .finally(()=> setLoad(false))
- 
     }, [guitar])
 
     return(

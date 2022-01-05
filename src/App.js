@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartContextProvider  from './context/CartContext';
+import ThankYouPage from './components/ThankYouPage';
 
 function App() {
   return (
@@ -28,7 +29,12 @@ function App() {
               <Route 
               exact 
               path="/cart" 
-              element={<Cart/>}/> 
+              element={<Cart/>}/>
+              <Route 
+                exact
+                path="/thankyou/:order"
+                element={<ThankYouPage/>}
+              />
           </Routes>
         </div>
       </BrowserRouter>

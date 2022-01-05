@@ -179,18 +179,19 @@
   color: white;
   background-color: red;
 }
-.order-summary{
+.user-data-submit-button-done{
+  margin-top: 20px;
   font-family: 'Outfit', sans-serif;
-}
-.order-summary > h1, h2, .cart-total-price {
+  border: 1.5px solid white;
+  color: white;
+  background-color: red;
+  font-size: 15px;
+  width: 500px;
+  height: 50px;
   margin-bottom: 20px;
 }
-.order-summary-userdata > h4 {
-  color: grey
-}
-.order-summary-userdata{
-  width: 400px;
-  /* background-color:rgb(153, 153, 116); */
-  padding: 5px;
-  border: 0.5px solid grey
+.user-data-submit-button-done:hover{
+  border: 2.5px solid red;
+  color: red;
+  background-color: white;
 }
