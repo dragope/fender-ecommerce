@@ -11,11 +11,12 @@ function CartWidget(){
 
     return(
         <div className="cart-container">
-            <label>Shopping Cart</label>
             <Link to="/cart">
                 <img className="cart-container-cart" src={cart} alt="Shopping Cart Icon"/>
             </Link>
+            { cartList[0] !== undefined && 
             <div className="cart-container-circle"><p>{totalItems}</p></div>
+            }
         </div>
     )
 }

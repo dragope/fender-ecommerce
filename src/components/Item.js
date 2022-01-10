@@ -12,7 +12,6 @@ function Item( {instrument} ){
     const { addToCart } = useCartContext()
 
     const handleAddQuantity =(param)=>{
-        alert("You added " + param + " product/s to your shopping cart")
         setCart(false)
         addToCart( {...instrument, quantity:parseInt(param)} )
     }

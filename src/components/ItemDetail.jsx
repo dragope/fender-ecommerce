@@ -38,20 +38,6 @@ function ItemDetail({instrument}){
                             <h4>{ instrument.description }</h4>
                         </div>
                         <hr/>
-                        <div className="detalles_producto__colores">
-                            <h4>COLORS</h4>
-                            <button>Red</button>
-                            <button>Black</button>
-                            <button>Blue</button>
-                            <button>Yellow</button>
-                            <button>Green</button>
-                            <button>Sunburst</button>
-                        </div>
-                        <div className="detalles_producto__final">
-                            <input type="text" placeholder="Zip Code"/>
-                            <button>CALCULATE SHIPPING COST</button>
-                            <p><a href="https://tools.usps.com/zip-code-lookup.htm">Check you Zip Code</a></p>
-                        </div>
                         { cart ?
                             <ItemCount stock={ instrument.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
                             :

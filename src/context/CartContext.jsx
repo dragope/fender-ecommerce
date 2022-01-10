@@ -23,6 +23,7 @@ function CartContextProvider({children}) {
      
     function emptyCart() { 
         setCartList([])
+        setOrderId('')
     }
     
     function deleteItem(item){
@@ -35,30 +36,36 @@ function CartContextProvider({children}) {
 
     const createOrder = (e) => {
         e.preventDefault()
+
         let userName = document.getElementById('user-name').value + " " + document.getElementById('user-surname').value
         let userPhone = document.getElementById('user-phone').value
         let userEmail = document.getElementById('user-email').value
+        let userConfirmEmail = document.getElementById('user-confirmemail').value
         let order = {}
         order.date = Timestamp.fromDate(new Date())
         order.buyer = { name: userName, phone: userPhone, email: userEmail }
         order.price = finalPrice
 
-        order.items = cartList.map(cartItem =>{
-            const id = cartItem.id;
-            const quantity = cartItem.quantity;
-            const title = cartItem.title;
-            const price = cartItem.price;
-
-            return {id, quantity, title, price}
-        } )
-
-        const db = getFirestore()
-        const ordenColeccion = collection(db, 'orders')
-        addDoc(ordenColeccion, order)
-        .then(resp => setOrderId(resp.id))
-        .catch(err => console.log(err))
-
-        
+        if (userName === "" || userPhone === "" || userEmail === "" ){
+            alert("Please complete all the required fields")
+        } else if (userEmail !== userConfirmEmail ){
+            alert("The emails provided do not match")
+        } else if (!userEmail.includes("@") && !userEmail.includes(".") ){
+            alert("Invalid email")
+        }else {
+            order.items = cartList.map(cartItem =>{
+                const id = cartItem.id;
+                const quantity = cartItem.quantity;
+                const title = cartItem.title;
+                const price = cartItem.price;
+                return {id, quantity, title, price}
+            } )
+            const db = getFirestore()
+            const ordenColeccion = collection(db, 'orders')
+            addDoc(ordenColeccion, order)
+            .then(resp => setOrderId(resp.id))
+            .catch(err => console.log(err))
+        }
     }
 
     return (

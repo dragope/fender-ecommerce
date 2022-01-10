@@ -63,11 +63,12 @@
   .cart-product-container > div > p:first-child{
     color: grey;
     font-size: 12px;
-    margin-bottom: -12px;
   }
   .cart-product-title{
     width: 450px;
+    
   }
+ 
   .cart-total-price {
     padding: 15px;
     margin-top: 20px;
@@ -103,7 +104,7 @@
     margin-top: 20px;
     border: none;
     font-family: 'Outfit', sans-serif;
-    background-color: rgb(153, 153, 116);;
+    background-color: rgb(153, 153, 116);
     font-size: 15px;
     color: white;
     border: 1px solid rgb(185, 184, 184);
@@ -163,7 +164,13 @@
   width: 400px;
   display: block;
 }
-.user-data-submit-button {
+.user-data-form-buttons{
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+}
+
+.user-data-form-buttons > button {
   margin-top: 20px;
   font-family: 'Outfit', sans-serif;
   border: 1.5px solid red;
@@ -174,7 +181,7 @@
   height: 35px;
   margin-bottom: 20px;
 }
-.user-data-submit-button:hover{
+.user-data-form-buttons > button:hover{
   border: 2.5px solid red;
   color: white;
   background-color: red;

@@ -16,33 +16,32 @@
     background-color: rgb(153, 153, 116);
     border: 1px solid rgb(185, 184, 184)
   }
-  .cart-product-container{
+  .tpcart-product-container{
     padding: 15px;
     margin-top: 20px;
     width: 1000px;
-    height: 150px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: .25px solid rgb(224, 224, 224);
   }
-  .cart-product-image{
+  .tpcart-product-image{
     width: 120px;
   }
-  .cart-product-container > div > p{
+  .tpcart-product-container > div > p{
     font-family: 'Outfit', sans-serif;
     color: black;
   }
-  .cart-product-container > div > p:first-child{
+  .tpcart-product-container > div > p:first-child{
     color: grey;
     font-size: 12px;
-    margin-bottom: -12px;
   }
-  .cart-product-title{
+  .tpcart-product-title{
     width: 450px;
   }
-  .cart-total-price {
+  .tpcart-total-price {
     padding: 15px;
     margin-top: 20px;
     width: 1000px;
@@ -53,7 +52,7 @@
     align-items: center;
     border: .25px solid rgb(224, 224, 224);
   }
-  .cart-total-price > p {
+  .tpcart-total-price > p {
     font-family: 'Outfit', sans-serif;
     color: grey;
     font-size: 25px;

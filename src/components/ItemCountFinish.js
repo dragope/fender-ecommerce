@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './ItemCountFinish.css'
 
-function ItemCountFinish({ stock, initial,  onAdd }) {
+function ItemCountFinish() {
 
 
     return(

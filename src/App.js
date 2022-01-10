@@ -32,7 +32,7 @@ function App() {
               element={<Cart/>}/>
               <Route 
                 exact
-                path="/thankyou/:order"
+                path="/thankyou/:idOrder"
                 element={<ThankYouPage/>}
               />
           </Routes>

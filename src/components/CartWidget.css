@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
     
 }
 .cart-container-cart {
@@ -33,4 +32,5 @@
 .cart-container-circle > p {
     font-size: 15px;
     font-family: 'Outfit', sans-serif;
+    color: white;
 }
