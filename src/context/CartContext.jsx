@@ -40,20 +40,25 @@ function CartContextProvider({children}) {
     const createOrder = (e) => {
         e.preventDefault()
 
-        let userName = document.getElementById('user-name').value + " " + document.getElementById('user-surname').value
+        let userName = document.getElementById('user-name').value 
+        let userSurname = document.getElementById('user-surname').value
         let userPhone = document.getElementById('user-phone').value
         let userEmail = document.getElementById('user-email').value
         let userConfirmEmail = document.getElementById('user-confirmemail').value
         let order = {}
         order.date = Timestamp.fromDate(new Date())
-        order.buyer = { name: userName, phone: userPhone, email: userEmail }
+        order.buyer = { name: userName + " " + userSurname, phone: userPhone, email: userEmail }
         order.price = finalPrice
 
-        if (userName === "" || userPhone === "" || userEmail === "" ){
+        if (userName === "" || userSurname === "" || userPhone === "" || userEmail === "" || userConfirmEmail === "" ){
             alert("Please complete all the required fields")
+        } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userName) ){
+            alert("Name must only contain numbers and letters")
+        } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userSurname) ){
+            alert("Surname must only contain numbers and letters")
         } else if (userEmail !== userConfirmEmail ){
             alert("The emails provided do not match")
-        } else if (!userEmail.includes("@") || !userEmail.includes(".") ){
+        }else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(userEmail)){
             alert("Invalid email")
         }else {
             order.items = cartList.map(cartItem =>{
