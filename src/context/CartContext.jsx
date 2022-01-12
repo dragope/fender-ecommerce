@@ -7,6 +7,7 @@ export const useCartContext = () => useContext(CartContext)
 
 
 function CartContextProvider({children}) {
+    
     const [cartList, setCartList] = useState([])
     const [orderId, setOrderId] = useState('')
 
@@ -34,6 +35,8 @@ function CartContextProvider({children}) {
 
     const finalPrice = cartList.map(item => item.accprice).reduce((prev, curr) => prev + curr, 0)
 
+    const [purchaseStatus, setPurchaseStatus] = useState('Checking Cart')
+
     const createOrder = (e) => {
         e.preventDefault()
 
@@ -50,7 +53,7 @@ function CartContextProvider({children}) {
             alert("Please complete all the required fields")
         } else if (userEmail !== userConfirmEmail ){
             alert("The emails provided do not match")
-        } else if (!userEmail.includes("@") && !userEmail.includes(".") ){
+        } else if (!userEmail.includes("@") || !userEmail.includes(".") ){
             alert("Invalid email")
         }else {
             order.items = cartList.map(cartItem =>{
@@ -60,6 +63,7 @@ function CartContextProvider({children}) {
                 const price = cartItem.price;
                 return {id, quantity, title, price}
             } )
+            
             const db = getFirestore()
             const ordenColeccion = collection(db, 'orders')
             addDoc(ordenColeccion, order)
@@ -77,7 +81,9 @@ function CartContextProvider({children}) {
             finalPrice,
             createOrder,
             orderId,
-            setOrderId
+            setOrderId,
+            purchaseStatus, 
+            setPurchaseStatus
         }}>
             { children }
         </CartContext.Provider>

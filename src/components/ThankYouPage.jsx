@@ -20,7 +20,7 @@ function ThankYouPage(){
             .then(resp => setOrder({ id: resp.id, ...resp.data()}))
             .catch(e => console.log(e))
             .finally(()=> setLoad(false))
-    }, [idOrder])
+    }, [emptyCart, idOrder])
 
     return(
         <center>
