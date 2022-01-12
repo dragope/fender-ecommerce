@@ -1,7 +1,7 @@
 import React from "react";
 import './Cart.css'
 import { useState } from 'react'
-import {useCartContext} from '../context/CartContext'
+import { useCartContext } from '../context/CartContext'
 import CartUserForm from "./CartUserForm";
 import CartProducts from "./CartProducts";
 import CartEmpty from "./CartEmpty"

@@ -10,6 +10,8 @@ function CartContextProvider({children}) {
     
     const [cartList, setCartList] = useState([])
     const [orderId, setOrderId] = useState('')
+    const [purchaseStatus, setPurchaseStatus] = useState('Checking Cart')
+    const [error, setError] = useState('')
 
     function addToCart(item) {  
         const itemIndex = cartList.findIndex(i => i.id === item.id)
@@ -34,9 +36,7 @@ function CartContextProvider({children}) {
     }
 
     const finalPrice = cartList.map(item => item.accprice).reduce((prev, curr) => prev + curr, 0)
-
-    const [purchaseStatus, setPurchaseStatus] = useState('Checking Cart')
-
+    
     const createOrder = (e) => {
         e.preventDefault()
 
@@ -51,15 +51,15 @@ function CartContextProvider({children}) {
         order.price = finalPrice
 
         if (userName === "" || userSurname === "" || userPhone === "" || userEmail === "" || userConfirmEmail === "" ){
-            alert("Please complete all the required fields")
+            setError("Please complete all the required fields")
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userName) ){
-            alert("Name must only contain numbers and letters")
+            setError("Name must only contain numbers and letters")
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userSurname) ){
-            alert("Surname must only contain numbers and letters")
+            setError("Surname must only contain numbers and letters")
         } else if (userEmail !== userConfirmEmail ){
-            alert("The emails provided do not match")
+            setError("The emails provided do not match")
         }else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(userEmail)){
-            alert("Invalid email")
+            setError("Invalid email")
         }else {
             order.items = cartList.map(cartItem =>{
                 const id = cartItem.id;
@@ -88,7 +88,9 @@ function CartContextProvider({children}) {
             orderId,
             setOrderId,
             purchaseStatus, 
-            setPurchaseStatus
+            setPurchaseStatus,
+            error,
+            setError
         }}>
             { children }
         </CartContext.Provider>

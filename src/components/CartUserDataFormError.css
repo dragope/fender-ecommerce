@@ -1,0 +1,20 @@
+.user-data-form-error{
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.user-data-form-error > button {
+    width: 30px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid red;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    background-color: white;
+    color: red;
+}
+.user-data-form-error > button:hover{
+    background-color: red;
+    color: white;
+    border: .5px solid grey;
+}

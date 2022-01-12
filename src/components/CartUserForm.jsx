@@ -1,10 +1,11 @@
 import React from 'react'
 import { useCartContext } from '../context/CartContext'
 import { Link } from "react-router-dom";
+import CartUserFormError from './CartUserFormError'
 
 function CartUserForm(){
 
-    const { createOrder, orderId, setPurchaseStatus } = useCartContext()
+    const { createOrder, orderId, setPurchaseStatus, error } = useCartContext()
     
     return(
             <div className="user-data-provier-container">
@@ -32,7 +33,7 @@ function CartUserForm(){
                     </div>
                 </form>
 
-                { orderId.length < 1 ?
+                { orderId.length < 1 && error.length < 1 ?
 
                     <div className="user-data-form-buttons">
                         <button className="user-data-edit-button" onClick={()=> setPurchaseStatus('Checking Cart')}>
@@ -42,6 +43,10 @@ function CartUserForm(){
                             SUBMIT AND CONFIRM PURCHASE
                         </button>
                     </div>
+
+                    : orderId.length < 1 && error.length > 1 ?
+
+                    <CartUserFormError/>
 
                     :
 

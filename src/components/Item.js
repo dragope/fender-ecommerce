@@ -16,6 +16,10 @@ function Item( {instrument} ){
         addToCart( {...instrument, quantity:parseInt(param)} )
     }
 
+    const buyMore = () =>{
+        setCart(!cart)
+    }
+
     return(
         <div key={instrument.id} className="card-container">
             <img src={instrument.pictureURL} alt="Foto de producto" />
@@ -30,7 +34,7 @@ function Item( {instrument} ){
             { cart ?
                 <ItemCount stock={ instrument.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
                 :
-                <ItemCountFinish />
+                <ItemCountFinish onClick={buyMore} />
             }
            
         </div>

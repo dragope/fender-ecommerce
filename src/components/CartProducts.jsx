@@ -15,6 +15,7 @@ function CartProducts(){
 
             { cartList.map(prod => 
                 <div className="cart-product-container" key={prod.id}>
+                
                     <img 
                         className="cart-product-image" 
                         alt="Guitar" 
@@ -39,11 +40,12 @@ function CartProducts(){
 
                     { purchaseStatus === 'Checking Cart' &&
 
-                    <img 
-                        className="cart-deleteItem" 
-                        src={eraseItem} alt="Delete Item Button" 
-                        onClick={() => deleteItem(prod)}
-                    />
+                        <img 
+                            className="cart-deleteItem" 
+                            src={eraseItem} alt="Delete Item Button" 
+                            onClick={() => deleteItem(prod)}
+                        />
+
                     }
 
                 </div>

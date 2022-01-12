@@ -8,11 +8,16 @@
     justify-content: center;
 }
 .nav-top {
-    width: 1350px;
+    width: 100%;
+    max-width: 1350px;
+    margin-left: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
+}
+.nav-logo-container{
+    margin: auto;
 }
 .nav-logo {
     height: 100px;

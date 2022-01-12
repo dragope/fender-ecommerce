@@ -9,7 +9,9 @@ function NavBar(){
     return(
         <nav className='nav-container'>
             <div className="nav-top">
+                <div className='nav-logo-container'>
                 <Link to="/"><img src={logo} alt="Fender Logo" className="nav-logo" /></Link>
+                </div>
                 <CartWidget/>
             </div>
             <ul>
