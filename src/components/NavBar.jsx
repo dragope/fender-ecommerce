@@ -1,31 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
-import logo from'./images/pngaaa.com-1300231.png'
-import cart from './images/shopping cart.svg'
+import logo from './images/pngaaa.com-1300231.png'
+import CartWidget from './CartWidget'
 
 function NavBar(){
+    
     return(
         <nav className='nav-container'>
             <div className="nav-top">
-                <div className="nav-login">
-                    <a href="">Login</a>
-                    <p>|</p>
-                    <a href="">Register</a>
+                <div className='nav-logo-container'>
+                <Link to="/"><img src={logo} alt="Fender Logo" className="nav-logo" /></Link>
                 </div>
-                <img src={logo} alt="Fender Logo" className="nav-logo" />
-                <div className="nav-login">
-                    <label>Shopping Cart</label>
-                    <img className="nav-login-cart" src={cart} alt="Shopping Cart Icon"/>
-                    <div className="nav-login-circle"><p>5</p></div>
-                </div>
+                <CartWidget/>
             </div>
             <ul>
-                <li><a href="">GUITAR</a></li>
-                <li><a href="">BASS</a></li>
-                <li><a href="">AMPLIFICATION</a></li>
-                <li><a href="">STRINGS</a></li>
-                <li><a href="">PEDALS</a></li>
-                <li><a href="">ACCESSORIES</a></li>
+                <li><Link to="/category/stratocaster">STRATOCASTER</Link></li>
+                <li><Link to="/category/telecaster">TELECASTER</Link></li>
+                <li><Link to="/category/jaguar">JAGUAR</Link></li>
+                <li><Link to="/category/jazzmaster">JAZZMASTER</Link></li>
             </ul>
         </nav>
     )

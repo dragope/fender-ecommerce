@@ -1,0 +1,27 @@
+.footer-container{
+    width: 100vw;
+    height: 30px;
+    background: linear-gradient(142deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(122,122,126,1) 50%, rgba(204,207,208,1) 100%); 
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;    
+}
+.footer{
+    width: 100vw;
+    max-width: 1350px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer > p {
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    font-size: 12px;
+
+}
+.footer-github {
+    height: 25px;
+    margin-left: 5px;
+}

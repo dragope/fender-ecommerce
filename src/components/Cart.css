@@ -1,0 +1,208 @@
+.loader-container{
+  width: 100vw;
+  max-width: 1350px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.loader {
+    border: 56px solid #f3f3f3; 
+    border-top: 56px solid rgb(223, 85, 85); 
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+    animation: spin 1.5s linear infinite;
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .cartpage-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartpage-container > h3 {
+    margin-top: 50px;
+  }
+  .cartpage-container > h2 {
+    margin-top: 20px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .start-shopping{
+    margin-top: 20px;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(153, 153, 116);;
+    font-size: 25px;
+    color: white;
+    border: 1px solid rgb(185, 184, 184);
+    width: 390px;
+    height: 45px;
+  }
+  .start-shopping:hover {
+    border: 1.5px solid red;
+    color: red;
+    background-color: white;
+  }
+  .cart-product-container{
+    padding: 15px;
+    margin-top: 20px;
+    width: 1000px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: .25px solid rgb(224, 224, 224);
+  }
+  .cart-product-image{
+    width: 120px;
+  }
+  .cart-product-container > div > p{
+    font-family: 'Outfit', sans-serif;
+    color: black;
+  }
+  .cart-product-container > div > p:first-child{
+    color: grey;
+    font-size: 12px;
+  }
+  .cart-product-title{
+    width: 450px; 
+  }
+  .cart-total-price {
+    padding: 15px;
+    margin-top: 20px;
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: .25px solid rgb(224, 224, 224);
+  }
+  .cart-total-price > p {
+    font-family: 'Outfit', sans-serif;
+    color: grey;
+    font-size: 25px;
+  }
+  .cart-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 1000px;
+    margin-bottom: 50px;
+
+  }
+  .cart-deleteItem {
+    height: 25px;
+  }
+  .cart-deleteItem:hover{
+    height: 30px;
+  }
+  .empty-cart-button {
+    margin-top: 20px;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(153, 153, 116);
+    font-size: 15px;
+    color: white;
+    border: 1px solid rgb(185, 184, 184);
+    width: 300px;
+    height: 35px;
+}
+.empty-cart-button:hover {
+    border: 1.5px solid red;
+    color: red;
+    background-color: white;
+}
+.continue-shopping-button {
+  margin-top: 20px;
+  font-family: 'Outfit', sans-serif;
+  border: 1.5px solid red;
+  color: red;
+  background-color: white;
+  font-size: 15px;
+  width: 300px;
+  height: 35px;
+}
+.continue-shopping-button:hover{
+  border: 2.5px solid red;
+  color: white;
+  background-color: red;
+}
+.user-data-provier-container{
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+}
+.user-data-form-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.user-data-form-container > div {
+  width: 450px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-data-form-container > div > label{
+  align-self: flex-start;
+}
+.user-data-form-container > div > input {
+  margin-left: 5px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  height: 30px;
+  width: 400px;
+  display: block;
+}
+.user-data-form-buttons{
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin-bottom: 50px;
+}
+.user-data-form-buttons > button {
+  margin-top: 20px;
+  font-family: 'Outfit', sans-serif;
+  border: 1.5px solid red;
+  color: red;
+  background-color: white;
+  font-size: 15px;
+  width: 300px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+.user-data-form-buttons > button:hover{
+  border: 2.5px solid red;
+  color: white;
+  background-color: red;
+}
+.user-data-submit-button-done{
+  margin-top: 20px;
+  font-family: 'Outfit', sans-serif;
+  border: 1.5px solid white;
+  color: white;
+  background-color: red;
+  font-size: 15px;
+  width: 500px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+.user-data-submit-button-done:hover{
+  border: 2.5px solid red;
+  color: red;
+  background-color: white;
+}
