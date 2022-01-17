@@ -2,7 +2,8 @@
 
 Online guitar store for [Fender Guitars](https://www.fender.com).
 
-<<<<<<< HEAD
+![ezgif-2-881359661f](https://user-images.githubusercontent.com/83094706/146400180-b3da7119-8cb5-471b-841d-79fa79f7adeb.gif)
+
 ## Dependencies Used
 
 [React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
@@ -33,6 +34,10 @@ Used to detect parameters within the URL's to determine the type and specific pr
 3. After the project is properly cloned, in the directory "react-drago", install the dependecies needed:
 
 #### `npm install`
+
+4. To open the project in a browser, on the same directory, type:
+
+#### `npm start`
 
 4. To open the project in a browser, on the same directory, type:
 
