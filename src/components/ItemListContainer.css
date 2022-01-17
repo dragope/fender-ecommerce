@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 15px;
+    margin-bottom: 45px;
 }
 .itemlistcontainer > h1 {
     font-family: 'Outfit', sans-serif;

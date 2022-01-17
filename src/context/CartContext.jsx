@@ -45,6 +45,7 @@ function CartContextProvider({children}) {
         let userPhone = document.getElementById('user-phone').value
         let userEmail = document.getElementById('user-email').value
         let userConfirmEmail = document.getElementById('user-confirmemail').value
+        
         let order = {}
         order.date = Timestamp.fromDate(new Date())
         order.buyer = { name: userName + " " + userSurname, phone: userPhone, email: userEmail }
@@ -56,6 +57,8 @@ function CartContextProvider({children}) {
             setError("Name must only contain numbers and letters")
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userSurname) ){
             setError("Surname must only contain numbers and letters")
+        } else if (!/[0-9]/.test(userPhone)){
+            setError("Phone can only contain numbers") 
         } else if (userEmail !== userConfirmEmail ){
             setError("The emails provided do not match")
         }else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(userEmail)){

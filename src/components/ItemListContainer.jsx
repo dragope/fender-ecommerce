@@ -31,7 +31,7 @@ function ItemListContainer(){
     return(
         <div className='itemlistcontainer'>
         { load ? 
-            <div className="loader"></div>
+            <div className="loader-container"><div className="loader"></div></div>
             : 
             productos.map((producto) => <ItemList key={producto.id} instrument={producto}
             />) 

@@ -6,6 +6,8 @@ import Cart from './components/Cart';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartContextProvider  from './context/CartContext';
 import ThankYouPage from './components/ThankYouPage';
+import OopsPage from './components/OopsPage';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -25,17 +27,29 @@ function App() {
             <Route 
               exact 
               path="/item/:guitar" 
-              element={<ItemDetailContainer/>}/>
-              <Route 
+              element={<ItemDetailContainer/>}
+            />
+            <Route 
               exact 
               path="/cart" 
-              element={<Cart/>}/>
-              <Route 
-                exact
-                path="/thankyou/:idOrder"
-                element={<ThankYouPage/>}
-              />
+              element={<Cart/>}  
+            />
+            <Route 
+              exact
+              path="/thankyou/:idOrder"
+              element={<ThankYouPage/>}
+            />
+            <Route
+              path="*"
+              element={<OopsPage />}
+            />
+            <Route
+              exact
+              path="/category/*"
+              element={<OopsPage />}
+            />
           </Routes>
+          <Footer/>
         </div>
       </BrowserRouter>
     </CartContextProvider>

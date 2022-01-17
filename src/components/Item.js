@@ -22,7 +22,7 @@ function Item( {instrument} ){
 
     return(
         <div key={instrument.id} className="card-container">
-            <img src={instrument.pictureURL} alt="Foto de producto" />
+            <img src={instrument.pictureURL} alt="Product" />
             <div className="title-container">
                 <h3>{instrument.title}</h3>
             </div>

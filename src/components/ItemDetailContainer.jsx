@@ -23,7 +23,7 @@ function ItemDetailContainer(){
     return(
         <div className="item-detail-container">
             { load ? 
-                <div className="loader"></div>
+                <div className="loader-container"><div className="loader"></div></div>
                 : 
                 <ItemDetail instrument={instrument} />
             } 
