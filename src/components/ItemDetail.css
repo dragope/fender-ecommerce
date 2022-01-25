@@ -1,4 +1,4 @@
-.detalles_producto {
+.detail_product {
     margin: auto;
     width: 1300px;
     height: 550px;
@@ -8,103 +8,71 @@
     font-style: 'Outfit', sans-serif;
     margin-bottom: 50px;
 }
-.detalles_producto__fotos{
+.detail_product__photos{
     width: 750px;
     height: 500px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-.detalles_producto__fotos > img {
+.detail_product__photos > img {
     object-fit: contain;
 }
-.foto_miniatura{
+.photo_miniature{
     width: 250px;
     height: 250px;
     background-color: white;
     padding: 2.5px;
 }
-.foto_grande{
+.photo_big{
     width: 500px;
     height: 500px;
     background-color: white;
     padding: 2.5px;
 }
-.foto_miniatura:hover, .foto_grande:hover{
+.photo_miniature:hover, .photo_big:hover{
     border: 5px solid white;
 }
-.detalles_producto__detalles{
+.detail_product__detail{
     width: 550px;
     height: 500px;
     margin-left: 40px;
     font-family: 'Outfit', sans-serif;
 }
-.detalles_producto__titulo {
+.detail_product__title {
     margin-bottom: 10px;
 }
-.detalles_producto__cuotas {
+.detail_product__cards {
     margin-top: 10px;
 }
-.detalles_producto__cuotas > h4 {
+.detail_product__cards > h4 {
     color:grey;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.detalles_producto__cuotas > p {
+.detail_product__cards > p {
     margin-top: 10px;
     font-size: 12.5px;
 }
-.detalles_producto__cuotas > img {
+.detail_product__cards > img {
     width: 30px;
     border: .25px solid rgb(224, 224, 224);
     margin-right: 5px;
     margin-top: 5px;
 }
-.detalles_producto__cuotas > h5 {
+.detail_product__cards > h5 {
     margin-top: 5px;
 }
-.detalles_producto__cantidad{
-    margin-bottom: 30px;
-}
-.detalles_producto__cantidad > input {
-    margin-top: 10px;
-    width: 60px;
-    height: 45px;
-    font-size: 17.5px;
-}
-.detalles_producto__cantidad > button {
-    height: 45px;
-    width: 175px;
-}
-/* .detalles_producto__colores {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.detalles_producto__colores > button {
-    margin-top: 10px;
-    width: 62.5px;
-    height: 30px;
+.stockdetail-container {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     font-family: 'Outfit', sans-serif;
-    margin-right: 5px;
+    margin-bottom: 20px;
 }
-.detalles_producto__final {
-    margin-top: 5px;
-}
-.detalles_producto__final > p {
-    margin-bottom: 10px;
-    font-size: 10px;
-}
-.detalles_producto__final > input {
-    width: 320px;
-    height: 30px;
-}
-.detalles_producto__final > button {
-    width: 208px;
-    height: 30px;
-    font-family: 'Outfit', sans-serif;
-    margin-left: 5px;
-} */
-.detalles_producto__precio  {
+.detail_product__price  {
     color: red;
 }
 hr {

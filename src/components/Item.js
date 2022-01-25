@@ -8,12 +8,17 @@ import { useCartContext } from '../context/CartContext'
 
 function Item( {instrument} ){
 
+    const { addToCart, cartList } = useCartContext()
     const [cart, setCart] = useState(true);
-    const { addToCart } = useCartContext()
+    
+    const itemIndex = cartList.findIndex(i => i.id === instrument.id)
+    const stock = itemIndex === -1 ? instrument.stock : cartList[itemIndex].stock
 
-    const handleAddQuantity =(param)=>{
-        setCart(false)
+    const handleAddQuantity = (param)=>{
+        param <= stock 
+        &&
         addToCart( {...instrument, quantity:parseInt(param)} )
+        setCart(!cart)
     }
 
     const buyMore = () =>{
@@ -28,12 +33,17 @@ function Item( {instrument} ){
             </div>
             <h1>${instrument.price}.00</h1>
             <div className="stock-container">
-                <h4>Available stock : {instrument.stock}</h4>
+                <h4>Available stock : {stock}</h4>
             </div>
             <Link to={`/item/${instrument.id}`}><button className="card-container-button">Product Details</button></Link>
             { cart ?
-                <ItemCount stock={ instrument.stock } initial={ 1 } onAdd={ handleAddQuantity }/>
-                :
+                <ItemCount 
+                    stock={ itemIndex > -1 ? stock : instrument.stock } 
+                    initial={ itemIndex === -1 ? 1 : stock >= 1 ? 1 : "No more stock available" } 
+                    onAdd={ handleAddQuantity }
+                />
+            :
+            !cart &&
                 <ItemCountFinish onClick={buyMore} />
             }
            

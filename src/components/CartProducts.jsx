@@ -6,7 +6,7 @@ import eraseItem from './images/remove-cross.svg'
 function CartProducts(){
 
     const { purchaseStatus, cartList, setPurchaseStatus, deleteItem, finalPrice, emptyCart } = useCartContext()
-
+    console.log(cartList)
     return(
         <div className="cartpage-container">
             <h2>

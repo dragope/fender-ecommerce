@@ -13,14 +13,20 @@ function CartContextProvider({children}) {
     const [purchaseStatus, setPurchaseStatus] = useState('Checking Cart')
     const [error, setError] = useState('')
 
-    function addToCart(item) {  
+    function addToCart(item) {
         const itemIndex = cartList.findIndex(i => i.id === item.id)
         if(itemIndex > -1){
+            let stock = cartList[itemIndex].stock
             const prevQuant = parseInt(cartList[itemIndex].quantity)
-            cartList.splice(itemIndex, 1)
-            setCartList([...cartList, {...item, quantity: item.quantity + prevQuant, accprice: item.price*(item.quantity+prevQuant)}])
+            if(stock >= item.quantity){
+                cartList.splice(itemIndex, 1)
+                setCartList([...cartList, {...item, stock: stock-item.quantity, quantity: item.quantity + prevQuant, accprice: item.price*(item.quantity+prevQuant)}])
+            } else {
+                console.log('no hay stock para esta compra')
+            }
+            
         } else {
-            setCartList([...cartList, {...item, accprice: item.price*item.quantity}])
+            setCartList([...cartList, {...item, stock: item.stock-item.quantity ,accprice: item.price*item.quantity}])
         }
     }
      
@@ -36,7 +42,7 @@ function CartContextProvider({children}) {
     }
 
     const finalPrice = cartList.map(item => item.accprice).reduce((prev, curr) => prev + curr, 0)
-    
+
     const createOrder = (e) => {
         e.preventDefault()
 
@@ -93,7 +99,7 @@ function CartContextProvider({children}) {
             purchaseStatus, 
             setPurchaseStatus,
             error,
-            setError
+            setError,
         }}>
             { children }
         </CartContext.Provider>
