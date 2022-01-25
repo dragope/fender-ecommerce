@@ -2,7 +2,7 @@
 
 Online guitar store for [Fender Guitars](https://www.fender.com).
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/83094706/149963669-e30d9f16-c998-454e-95dd-aa1b3ae78728.gif)
+![ezgif-2-45bfcbf655](https://user-images.githubusercontent.com/83094706/151057713-1af784ab-9df3-4776-b72c-d62090a6770b.gif)
 
 ## Dependencies Used
 
