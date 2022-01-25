@@ -18,13 +18,9 @@ function CartContextProvider({children}) {
         if(itemIndex > -1){
             let stock = cartList[itemIndex].stock
             const prevQuant = parseInt(cartList[itemIndex].quantity)
-            if(stock >= item.quantity){
+            stock >= item.quantity &&
                 cartList.splice(itemIndex, 1)
                 setCartList([...cartList, {...item, stock: stock-item.quantity, quantity: item.quantity + prevQuant, accprice: item.price*(item.quantity+prevQuant)}])
-            } else {
-                console.log('no hay stock para esta compra')
-            }
-            
         } else {
             setCartList([...cartList, {...item, stock: item.stock-item.quantity ,accprice: item.price*item.quantity}])
         }
@@ -32,7 +28,6 @@ function CartContextProvider({children}) {
      
     function emptyCart() { 
         setCartList([])
-        setOrderId('')
     }
     
     function deleteItem(item){
@@ -60,10 +55,10 @@ function CartContextProvider({children}) {
         if (userName === "" || userSurname === "" || userPhone === "" || userEmail === "" || userConfirmEmail === "" ){
             setError("Please complete all the required fields")
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userName) ){
-            setError("Name must only contain numbers and letters")
+            setError("Name must only contain letters and spaces")
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(userSurname) ){
-            setError("Surname must only contain numbers and letters")
-        } else if (!/[0-9]/.test(userPhone)){
+            setError("Surname must only contain letters and spaces")
+        } else if (!/^[0-9]*$/.test(userPhone)){
             setError("Phone can only contain numbers") 
         } else if (userEmail !== userConfirmEmail ){
             setError("The emails provided do not match")

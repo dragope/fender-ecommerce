@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartContextProvider  from './context/CartContext';
 import ThankYouPage from './components/ThankYouPage';
 import OopsPage from './components/OopsPage';
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 function App() {
   return (

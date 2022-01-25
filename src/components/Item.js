@@ -46,7 +46,6 @@ function Item( {instrument} ){
             !cart &&
                 <ItemCountFinish onClick={buyMore} />
             }
-           
         </div>
     )
 }

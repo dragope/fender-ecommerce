@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import GitHub from '../src/components/images/github.svg'
+import GitHub from './images/github.svg'
 
 function Footer(){
     return(

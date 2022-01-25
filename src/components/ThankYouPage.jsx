@@ -12,15 +12,19 @@ function ThankYouPage(){
     const [load, setLoad] = useState(true)
     const { idOrder } = useParams()
 
+    
+
     useEffect(()=>{
-        emptyCart()
         const db = getFirestore()
         const orderRef = doc(db, 'orders', idOrder)
         getDoc(orderRef)
             .then(resp => setOrder({ id: resp.id, ...resp.data()}))
+            .then(emptyCart())
             .catch(e => console.log(e))
             .finally(()=> setLoad(false))
-    }, [emptyCart, idOrder])
+    }, [idOrder])
+
+    console.log(idOrder)
 
     return(
         <center>
